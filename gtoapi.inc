@@ -43,19 +43,29 @@ stock GetPlayerLevel(playerid)
 	return CallRemoteFunction("api_GetPlayerLevel", "d", playerid);
 }
 
+stock Float:GetVehicleModelCost(model)
+{
+	return CallRemoteFunction("api_GetVehicleModelCost", "d", model);
+}
+
+stock Float:GetVehicleModelMaxFuel(model)
+{
+	return CallRemoteFunction("api_GetVehicleModelMaxFuel", "d", model);
+}
+
 stock Float:SetVehicleFuel(vehicleid, Float:amount)
 {
-	return CallRemoteFunction("SetVehicleFuel", "df", vehicleid, amount);
+	return CallRemoteFunction("api_SetVehicleFuel", "df", vehicleid, amount);
 }
 
 stock Float:GetVehicleFuel(vehicleid)
 {
-	return CallRemoteFunction("GetVehicleFuel", "d", vehicleid);
+	return CallRemoteFunction("api_GetVehicleFuel", "d", vehicleid);
 }
 
-stock Float:GetVehicleModelMaxFuel(vehiclemodel)
+stock Float:GiveVehicleFuel(vehicleid, Float:amount)
 {
-	return CallRemoteFunction("api_GetVehicleModelMaxFuel", "d", vehiclemodel);
+	return CallRemoteFunction("api_GiveVehicleFuel", "df", vehicleid, amount);
 }
 
 stock GetModeVersion(&major, &minor, &build, extra[], name[])
