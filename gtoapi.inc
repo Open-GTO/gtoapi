@@ -53,9 +53,9 @@ stock Float:GetVehicleFuel(vehicleid)
 	return CallRemoteFunction("GetVehicleFuel", "d", vehicleid);
 }
 
-stock GetMaxVehicleFuel(vehiclemodel)
+stock Float:GetVehicleModelMaxFuel(vehiclemodel)
 {
-	return CallRemoteFunction("api_GetMaxVehicleFuel", "d", vehiclemodel);
+	return CallRemoteFunction("api_GetVehicleModelMaxFuel", "d", vehiclemodel);
 }
 
 stock GetModeVersion(&major, &minor, &build, extra[], name[])
