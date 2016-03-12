@@ -1,5 +1,5 @@
 /*
-	
+
 	About: api for using Open-GTO functions in FS
 	Author: ziggi
 
@@ -30,7 +30,12 @@ stock gto_SetPlayerHealth(playerid, Float:amount)
 
 stock GetMaxHealth(playerid, &Float:amount)
 {
-	return CallRemoteFunction("api_GetMaxHealth", "df", playerid, amount);
+	if (!IsPlayerConnected(playerid)) {
+		return 0;
+	}
+
+	amount = Float:CallRemoteFunction("api_GetMaxHealth", "d", playerid);
+	return 1;
 }
 
 stock GivePlayerXP(playerid, xpamount, showtext = 0, showtd = 1)
