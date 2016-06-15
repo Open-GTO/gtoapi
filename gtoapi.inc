@@ -19,9 +19,9 @@
 	GivePlayerMoney
 */
 
-stock gto_GivePlayerMoney(playerid, amount, showtext = 0)
+stock gto_GivePlayerMoney(playerid, amount)
 {
-	return CallRemoteFunction("api_GivePlayerMoney", "ddd", playerid, amount, showtext);
+	return CallRemoteFunction("api_GivePlayerMoney", "dd", playerid, amount);
 }
 #if defined _ALS_GivePlayerMoney
 	#undef GivePlayerMoney
